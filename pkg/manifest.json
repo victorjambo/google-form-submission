@@ -6,7 +6,11 @@
   "author": "Victor Mutai",
   "manifest_version": 2,
   "minimum_chrome_version": "60",
-  "optional_permissions": ["<all_urls>"],
+  "icons": {
+    "128": "icon128.png",
+    "48": "icon48.png",
+    "16": "icon16.png"
+  },
   "content_scripts": [
     {
       "run_at": "document_start",
