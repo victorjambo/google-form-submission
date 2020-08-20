@@ -1,0 +1,20 @@
+{
+  "name": "Submissio",
+  "version": "1.0.0",
+  "description": "Submit to Google forms on Steroids",
+  "homepage_url": "https://mutai.dev",
+  "author": "Victor Mutai",
+  "manifest_version": 2,
+  "minimum_chrome_version": "60",
+  "optional_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "run_at": "document_start",
+      "matches": [
+        "http://192.168.100.197:5000/*",
+        "https://mutai.dev/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}
