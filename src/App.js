@@ -11,7 +11,33 @@ const App = () => {
 
   return (
     <React.Fragment>
-      <Template />
+      <div class="submissio-toggle">
+        <span>Submit</span>
+
+        <div class="popup">
+          <div class="arrow"></div>
+          <div class="content">
+            Hi there, this is submissio. Move mouse over this button to display the code tree. You can also press the
+            shortkey <kbd>cmd shift s</kbd> (or <kbd>ctrl shift s</kbd>).
+          </div>
+        </div>
+      </div>
+
+      <div class="submissio-view-header"></div>
+
+      <div className="submissio-views">
+        <div class="submissio-announcement">
+          <span>What's new in 5.2.0</span>
+        </div>
+
+        <Template />
+      </div>
+
+      <div className="submissio-footer">
+        <a className="login-action">Login to unlock more features</a>
+      </div>
+
+      <div className="ui-resizable-handle ui-resizable-e" style={{zIndex: 90}}></div>
     </React.Fragment>
   );
 };
