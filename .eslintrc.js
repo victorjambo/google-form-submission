@@ -6,9 +6,15 @@ module.exports = {
     'object-curly-newline': ['error', { ImportDeclaration: 'never' }],
     'arrow-parens': ['error', 'as-needed'],
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
-    requireForBlockBody: false,
     'arrow-body-style': [2, 'as-needed'],
     'no-restricted-globals': ['off', 'history'],
     'no-shadow': 'off',
   },
+  globals: {
+    document: false
+  },
+  env: {
+    browser: true,
+    node: true
+  }
 };

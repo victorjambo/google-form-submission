@@ -1,4 +1,6 @@
-import React, {Component} from 'react';
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable react/prop-types */
+import React, { Component } from 'react';
 
 class Resizer extends Component {
   constructor(props) {
@@ -17,10 +19,12 @@ class Resizer extends Component {
   }
 
   onMove(e) {
-    const currentWidth = Math.trunc(e.pageX);
-    if (currentWidth !== this.state.currentWidth && currentWidth >= 200 && currentWidth <= 900) {
-      this.setState({currentWidth});
-      this.props.setWidth(currentWidth);
+    const { currentWidth } = this.state;
+    const { setWidth } = this.props;
+
+    if (e.pageX !== currentWidth && e.pageX >= 200 && e.pageX <= 900) {
+      this.setState({ currentWidth: e.pageX });
+      setWidth(currentWidth);
     }
   }
 
@@ -71,9 +75,10 @@ class Resizer extends Component {
         className="ui-resizable-handle ui-resizable-e ui-resizable-index"
         onMouseDown={this.onMouseDown}
         onTouchStart={this.onTouchStart}
-        ref={(div) => { this.handle = div; }} />
+        ref={div => { this.handle = div; }}
+      />
     );
   }
-};
+}
 
 export default Resizer;

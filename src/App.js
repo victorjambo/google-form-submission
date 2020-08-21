@@ -1,4 +1,4 @@
-import React, {useState, useEffect, Fragment} from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Template from './components/Template';
 import Resizer from './components/Resizer';
@@ -10,43 +10,47 @@ const App = () => {
     const html = document.getElementsByTagName('html');
     const nav = document.getElementById('submissio');
 
-    nav.style = `width: ${width}px`
+    nav.style = `width: ${width}px`;
 
     if (html.length) {
-      html[0].setAttribute("style", `margin-left: ${width}px`);
+      html[0].setAttribute('style', `margin-left: ${width}px`);
     }
   });
 
   return (
-    <Fragment>
+    <>
       <div className="submissio-toggle">
         <span>Submit</span>
 
         <div className="popup">
-          <div className="arrow"></div>
+          <div className="arrow" />
           <div className="content">
-            Hi there, this is submissio. Move mouse over this button to display the code tree. You can also press the
-            shortkey <kbd>cmd shift s</kbd> (or <kbd>ctrl shift s</kbd>).
+            Hi there, this is submissio. Move mouse over this button to display the code tree.
+            You can also press the shortkey
+            <kbd>cmd shift s</kbd>
+            (or
+            <kbd>ctrl shift s</kbd>
+            ).
           </div>
         </div>
       </div>
 
-      <div className="submissio-view-header"></div>
+      <div className="submissio-view-header" />
 
       <div className="submissio-views">
         <div className="submissio-announcement">
-          <span>What's new in 5.2.0</span>
+          <span>Announcements</span>
         </div>
 
         <Template />
       </div>
 
       <div className="submissio-footer">
-        <a className="login-action">Login to unlock more features</a>
+        <a href="/" className="login-action">Login to unlock more features</a>
       </div>
 
       <Resizer setWidth={setWidth} />
-    </Fragment>
+    </>
   );
 };
 
