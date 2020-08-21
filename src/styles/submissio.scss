@@ -6,7 +6,6 @@
   top: 0 !important;
   bottom: 0 !important;
   left: 0 !important;
-  width: 332px;
   overflow: visible;
   position: fixed;
   z-index: $index-base;
@@ -21,6 +20,10 @@
   .ui-resizable-e {
     right: -4px;
     width: 8px;
+  }
+
+  .ui-resizable-index {
+    z-index: 90;
   }
 
   .submissio-view-header {

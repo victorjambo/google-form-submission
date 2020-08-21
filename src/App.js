@@ -1,32 +1,40 @@
-import React from 'react';
+import React, {useState, useEffect, Fragment} from 'react';
+
 import Template from './components/Template';
+import Resizer from './components/Resizer';
 
 const App = () => {
-  React.useEffect(() => {
+  const [width, setWidth] = useState(332); // TODO fetch from localstorage
+
+  useEffect(() => {
     const html = document.getElementsByTagName('html');
+    const nav = document.getElementById('submissio');
+
+    nav.style = `width: ${width}px`
+
     if (html.length) {
-      html[0].setAttribute("style", "margin-left: 332px");
+      html[0].setAttribute("style", `margin-left: ${width}px`);
     }
   });
 
   return (
-    <React.Fragment>
-      <div class="submissio-toggle">
+    <Fragment>
+      <div className="submissio-toggle">
         <span>Submit</span>
 
-        <div class="popup">
-          <div class="arrow"></div>
-          <div class="content">
+        <div className="popup">
+          <div className="arrow"></div>
+          <div className="content">
             Hi there, this is submissio. Move mouse over this button to display the code tree. You can also press the
             shortkey <kbd>cmd shift s</kbd> (or <kbd>ctrl shift s</kbd>).
           </div>
         </div>
       </div>
 
-      <div class="submissio-view-header"></div>
+      <div className="submissio-view-header"></div>
 
       <div className="submissio-views">
-        <div class="submissio-announcement">
+        <div className="submissio-announcement">
           <span>What's new in 5.2.0</span>
         </div>
 
@@ -37,8 +45,8 @@ const App = () => {
         <a className="login-action">Login to unlock more features</a>
       </div>
 
-      <div className="ui-resizable-handle ui-resizable-e" style={{zIndex: 90}}></div>
-    </React.Fragment>
+      <Resizer setWidth={setWidth} />
+    </Fragment>
   );
 };
 
