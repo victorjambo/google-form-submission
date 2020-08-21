@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 
 import Template from './components/Template';
 import Resizer from './components/Resizer';
+import { DEFAULTS } from './utils/constants';
 
 const App = () => {
-  const [width, setWidth] = useState(332); // TODO fetch from localstorage
+  const [width, setWidth] = useState(DEFAULTS.WIDTH); // TODO fetch from localstorage
 
   useEffect(() => {
     const html = document.getElementsByTagName('html');
