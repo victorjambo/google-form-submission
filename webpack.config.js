@@ -30,6 +30,19 @@ module.exports = {
           'css-loader',
         ],
       },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          {
+            loader: 'style-loader',
+            options: {
+              injectType: 'lazyStyleTag'
+            }
+          },
+          'css-loader',
+          'sass-loader',
+        ],
+      }
     ]
   },
   plugins: [
