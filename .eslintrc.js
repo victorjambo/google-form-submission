@@ -9,9 +9,11 @@ module.exports = {
     'arrow-body-style': [2, 'as-needed'],
     'no-restricted-globals': ['off', 'history'],
     'no-shadow': 'off',
+    'no-console': 'off',
   },
   globals: {
-    document: false
+    document: false,
+    chrome: false,
   },
   env: {
     browser: true,

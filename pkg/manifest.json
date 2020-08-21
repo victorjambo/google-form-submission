@@ -11,12 +11,16 @@
     "48": "icon48.png",
     "16": "icon16.png"
   },
+  "permissions": [
+    "storage"
+  ],
   "content_scripts": [
     {
       "run_at": "document_start",
       "matches": [
         "http://192.168.100.197:5000/*",
-        "https://mutai.dev/*"
+        "https://mutai.dev/*",
+        "https://stackoverflow.com/*"
       ],
       "js": ["content.js"]
     }
