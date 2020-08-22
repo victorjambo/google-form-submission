@@ -15,3 +15,8 @@ export const DEFAULTS = {
   SHOWN: false,
   PINNED: false,
 };
+
+export const VIEWS = {
+  HOME: 'HOME',
+  SETTINGS: 'SETTINGS'
+};

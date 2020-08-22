@@ -60,3 +60,14 @@
 .btn {
   cursor: pointer;
 }
+
+.default-error {
+  background-color: $danger;
+  border-color: $danger;
+  align-items: stretch;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  color: $white;
+  border-radius: 15px;
+  margin: 15px;
+}
