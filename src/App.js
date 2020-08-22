@@ -33,10 +33,6 @@ const App = () => {
         <Form />
       </div>
 
-      {/* <div className="submissio-footer">
-        <a href="/" className="login-action">Login to unlock more features</a>
-      </div> */}
-
       <Resizer setWidth={setWidth} />
     </>
   );
