@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import Resizer from './components/Resizer';
 import { DEFAULTS } from './utils/constants';
-import Form from './components/Form';
+import Views from './components/Views';
 import Toggler from './components/Toggler';
 import Header from './components/Header';
 import Announcement from './components/Announcement';
@@ -29,9 +29,7 @@ const App = () => {
 
       <Announcement />
 
-      <div className="submissio-views">
-        <Form />
-      </div>
+      <Views />
 
       <Resizer setWidth={setWidth} />
     </>
