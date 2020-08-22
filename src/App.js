@@ -5,6 +5,7 @@ import { DEFAULTS } from './utils/constants';
 import Form from './components/Form';
 import Toggler from './components/Toggler';
 import Header from './components/Header';
+import Announcement from './components/Announcement';
 
 const App = () => {
   const [width, setWidth] = useState(DEFAULTS.WIDTH); // TODO fetch from localstorage
@@ -26,9 +27,7 @@ const App = () => {
 
       <Header />
 
-      <div className="submissio-announcement">
-        <span>Announcements</span>
-      </div>
+      <Announcement />
 
       <div className="submissio-views">
         <Form />
