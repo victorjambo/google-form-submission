@@ -1,0 +1,96 @@
+.submissio-form {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+
+	fieldset {
+		border: none;
+	}
+
+	legend {
+		font-size: 1.4em;
+		margin-bottom: 10px;
+	}
+
+	label {
+		display: block;
+		margin-bottom: 8px;
+	}
+
+	.submissio-form-control {
+		font-family: Georgia, 'Times New Roman', Times, serif;
+		background: rgba(255, 255, 255, 0.1);
+		border: none;
+		border-radius: 4px;
+		font-size: 15px;
+		margin: 0;
+		outline: 0;
+		padding: 10px;
+		width: 100%;
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		background-color: #e8eeef;
+		color: #8a97a0;
+		-webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+		margin-bottom: 30px;
+
+		&:focus {
+			background: $success-light;
+		}
+
+		&:required:invalid:focus {
+			border: 1px solid $danger;
+			background: $danger-light;
+		}
+	}
+
+	.number {
+		background: $primary;
+		color: #fff;
+		height: 30px;
+		width: 30px;
+		display: inline-block;
+		font-size: 0.8em;
+		margin-right: 4px;
+		line-height: 30px;
+		text-align: center;
+		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+		border-radius: 15px 15px 15px 0px;
+	}
+
+	.submissio-btn-grp {
+		text-align: end;
+		border-top: 1px solid $gray-200;
+
+		.submissio-btn-cancel,
+		.submissio-btn-submit {
+			font-size: 1rem;
+			padding: 0.65rem 1rem;
+			color: #fff;
+			background: $primary;
+			border-radius: 0.42rem;
+			text-align: center;
+			font-style: normal;
+			border: 1px solid transparent;
+			margin: 10px;
+		}
+
+		.submissio-btn-cancel {
+			color: $primary;
+			background-color: $success-light;
+			border-color: transparent;
+		}
+
+		.submissio-btn-cancel:hover {
+			color: $white;
+			background-color: $primary;
+			border-color: transparent;
+		}
+
+		.submissio-btn-submit:hover {
+			color: $dark-less;
+			background-color: $success-hover;
+			border-color: $success-hover;
+		}
+	}
+}

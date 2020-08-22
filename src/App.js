@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import Template from './components/Template';
 import Resizer from './components/Resizer';
 import { DEFAULTS } from './utils/constants';
+import Form from './components/Form';
 
 const App = () => {
   const [width, setWidth] = useState(DEFAULTS.WIDTH); // TODO fetch from localstorage
@@ -38,17 +38,17 @@ const App = () => {
 
       <div className="submissio-view-header" />
 
+      <div className="submissio-announcement">
+        <span>Announcements</span>
+      </div>
+
       <div className="submissio-views">
-        <div className="submissio-announcement">
-          <span>Announcements</span>
-        </div>
-
-        <Template />
+        <Form />
       </div>
 
-      <div className="submissio-footer">
+      {/* <div className="submissio-footer">
         <a href="/" className="login-action">Login to unlock more features</a>
-      </div>
+      </div> */}
 
       <Resizer setWidth={setWidth} />
     </>
