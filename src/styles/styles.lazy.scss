@@ -1,4 +1,5 @@
-@use './styles/submissio.scss';
+@import './vars.scss';
+@import './submissio.scss';
 
 .App {
   text-align: center;

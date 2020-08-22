@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 
 import App from './App';
 
-import styles from './styles.lazy.scss';
+import styles from './styles/styles.lazy.scss';
 
 const createFindNode = () => {
   const nav = document.createElement('nav');
