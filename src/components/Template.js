@@ -1,4 +1,5 @@
 import React from 'react';
+import * as Icon from 'react-feather';
 
 const Template = () => (
   <div className="App">
@@ -17,6 +18,9 @@ const Template = () => (
         rel="noopener noreferrer"
       >
         Learn React
+        <Icon.Camera />
+        <Icon.Settings />
+        <Icon.Delete color="red" size={48} />
       </a>
     </header>
   </div>
