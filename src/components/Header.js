@@ -11,14 +11,16 @@ const Header = () => {
   const [pinned, setPinned] = useState(true);
 
   const handleThemeChange = () => {
-    const nav = document.getElementById('submissio');
+    const { body } = document;
 
     setTheme(prevState => {
       if (prevState === 'dark') {
-        nav.classList.remove('submissio-dark');
+        body.classList.add('submissio-light');
+        body.classList.remove('submissio-dark');
         return 'light';
       }
-      nav.classList.add('submissio-dark');
+      body.classList.add('submissio-dark');
+      body.classList.remove('submissio-light');
       return 'dark';
     });
   };
@@ -56,7 +58,7 @@ const Header = () => {
 
         <div className="submissio-header-icon" onClick={handleThemeChange} role="button" onKeyPress={() => {}} tabIndex={0}>
           {
-            theme === 'light' ? <Icon.Sun size={15} /> : <Icon.Moon size={15} />
+            theme === 'light' ? <Icon.Moon size={15} /> : <Icon.Sun size={15} />
           }
         </div>
 

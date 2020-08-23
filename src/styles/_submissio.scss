@@ -73,7 +73,7 @@
   .submissio-views {
     height: 100%;
     box-sizing: border-box;
-    background-color: $bg-white;
+    @include theme-aware('background', 'color-background');
     overflow: scroll;
     padding: 20px 2px;
   }
