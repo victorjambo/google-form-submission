@@ -1,0 +1,10 @@
+@each $name, $flow in $flex-flow {
+  .submissio-flex-#{$name} {
+    display: flex;
+    flex-flow: $flow;
+    justify-content: space-between;
+    @if $name == row {
+      align-items: center;
+    }
+  }
+}
