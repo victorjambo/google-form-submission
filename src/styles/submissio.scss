@@ -49,7 +49,12 @@
     }
 
     .submissio-header-icons {
+      display: flex;
       align-self: flex-start;
+
+      .submissio-header-icon {
+        padding: 3px;
+      }
     }
 
   }

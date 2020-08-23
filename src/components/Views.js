@@ -1,14 +1,22 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useContext } from 'react';
+
 import Form from './Form';
 import { VIEWS } from '../utils/constants';
+import { ViewContext } from '../context/Views';
 
-const DefaultView = () => <div className="default-error">Something Went Wrong!!!</div>;
+const DefaultView = () => <div className="default-danger">Something Went Wrong!!!</div>;
 
-const ViewSwitcher = ({ currentView }) => {
-  switch (currentView) {
+const SettingsView = () => <div className="default-warning">{VIEWS.SETTINGS}</div>;
+
+const ViewSwitcher = () => {
+  const [view] = useContext(ViewContext);
+
+  switch (view) {
     case VIEWS.HOME:
       return <Form />;
+    case VIEWS.SETTINGS:
+      return <SettingsView />;
     default:
       return <DefaultView />; // TODO Add submit error btn to send selectedView
   }

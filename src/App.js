@@ -6,6 +6,8 @@ import Views from './components/Views';
 import Toggler from './components/Toggler';
 import Header from './components/Header';
 import Announcement from './components/Announcement';
+import { ThemeProvider } from './context/Theme';
+import { ViewProvider } from './context/Views';
 
 const App = () => {
   const [width, setWidth] = useState(DEFAULTS.WIDTH); // TODO fetch from localstorage
@@ -19,20 +21,22 @@ const App = () => {
     if (html.length) {
       html[0].setAttribute('style', `margin-left: ${width}px`);
     }
-  });
+  }, [width]);
 
   return (
-    <>
-      <Toggler />
+    <ThemeProvider>
+      <ViewProvider>
+        <Toggler />
 
-      <Header />
+        <Header />
 
-      <Announcement />
+        <Announcement />
 
-      <Views />
+        <Views />
 
-      <Resizer setWidth={setWidth} />
-    </>
+        <Resizer setWidth={setWidth} />
+      </ViewProvider>
+    </ThemeProvider>
   );
 };
 
