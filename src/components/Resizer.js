@@ -1,8 +1,9 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable react/prop-types */
-import React, { Component } from 'react';
+import React, { Component, useContext, useEffect } from 'react';
+import { ViewContext } from '../context/Views';
 
-class Resizer extends Component {
+class ResizerComponent extends Component {
   constructor(props) {
     super(props);
 
@@ -80,5 +81,29 @@ class Resizer extends Component {
     );
   }
 }
+
+const Resizer = () => {
+  const [view, setView] = useContext(ViewContext);
+  const { width } = view;
+
+  useEffect(() => {
+    const html = document.getElementsByTagName('html');
+    const nav = document.getElementById('submissio');
+
+    nav.style = `width: ${width}px`;
+    html[0].setAttribute('style', `margin-left: ${width}px`);
+  }, [width]);
+
+  const setWidth = width => {
+    setView(prevState => ({
+      ...prevState,
+      width,
+    }));
+  };
+
+  return (
+    <ResizerComponent width={width} setWidth={setWidth} />
+  );
+};
 
 export default Resizer;

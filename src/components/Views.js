@@ -12,7 +12,7 @@ const SettingsView = () => <div className="default-warning">{VIEWS.SETTINGS}</di
 const ViewSwitcher = () => {
   const [view] = useContext(ViewContext);
 
-  switch (view) {
+  switch (view.page) {
     case VIEWS.HOME:
       return <Form />;
     case VIEWS.SETTINGS:

@@ -9,6 +9,9 @@
   z-index: $index-base;
   border-right: 1px solid $gray-less;
 
+  transform: translate3d(-100%, 0px, 0px);
+  transition: transform 0.3s ease-in 0s;
+
   .ui-resizable-handle {
     bottom: 0;
     cursor: col-resize;
@@ -114,7 +117,6 @@
   }
 
   .submissio-toggle {
-    display: none; // TODO
     background-color: #f2f5f7;
     border-radius: 0 4px 4px 0;
     border: 1px solid #e0e4e7;
@@ -205,5 +207,21 @@
         font-size: 13px;
       }
     }
+  }
+}
+
+.submissio-sidebar-show {
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.2s ease;
+
+  .ui-resizable-handle {
+    width: 8px;
+  }
+
+  .submissio-toggle {
+    opacity: 0;
+    pointer-events: none;
+    right: 10px;
+    transition: right 0s, opacity 0s;
   }
 }

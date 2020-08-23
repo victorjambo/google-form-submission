@@ -1,11 +1,15 @@
 /* eslint-disable react/prop-types */
 import React, { createContext, useState } from 'react';
-import { VIEWS } from '../utils/constants';
+import { VIEWS, DEFAULTS } from '../utils/constants';
 
 export const ViewContext = createContext();
 
 export const ViewProvider = props => {
-  const [view, setView] = useState(VIEWS.HOME);
+  const [view, setView] = useState({
+    page: VIEWS.HOME,
+    pinned: false,
+    width: DEFAULTS.WIDTH
+  });
 
   const { children } = props;
 

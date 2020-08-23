@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import Resizer from './components/Resizer';
-import { DEFAULTS } from './utils/constants';
 import Views from './components/Views';
 import Toggler from './components/Toggler';
 import Header from './components/Header';
@@ -9,35 +8,20 @@ import Announcement from './components/Announcement';
 import { ThemeProvider } from './context/Theme';
 import { ViewProvider } from './context/Views';
 
-const App = () => {
-  const [width, setWidth] = useState(DEFAULTS.WIDTH); // TODO fetch from localstorage
+const App = () => (
+  <ThemeProvider>
+    <ViewProvider>
+      <Toggler />
 
-  useEffect(() => {
-    const html = document.getElementsByTagName('html');
-    const nav = document.getElementById('submissio');
+      <Header />
 
-    nav.style = `width: ${width}px`;
+      <Announcement />
 
-    if (html.length) {
-      html[0].setAttribute('style', `margin-left: ${width}px`);
-    }
-  }, [width]);
+      <Views />
 
-  return (
-    <ThemeProvider>
-      <ViewProvider>
-        <Toggler />
-
-        <Header />
-
-        <Announcement />
-
-        <Views />
-
-        <Resizer setWidth={setWidth} />
-      </ViewProvider>
-    </ThemeProvider>
-  );
-};
+      <Resizer />
+    </ViewProvider>
+  </ThemeProvider>
+);
 
 export default App;
