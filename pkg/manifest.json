@@ -12,6 +12,7 @@
     "16": "icon16.png"
   },
   "permissions": [
+    "https://docs.google.com/*",
     "storage"
   ],
   "content_scripts": [

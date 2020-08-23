@@ -20,3 +20,18 @@ export const VIEWS = {
   HOME: 'HOME',
   SETTINGS: 'SETTINGS'
 };
+
+export const FORM_MAPPER = {
+  icNumber: {
+    name: 'entry.1208192532',
+    required: false
+  },
+  owner: {
+    name: 'entry.1135435746',
+    required: false
+  },
+  milk: {
+    name: 'entry.725073760',
+    required: true
+  },
+};
