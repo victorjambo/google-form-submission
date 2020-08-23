@@ -87,11 +87,8 @@ const Resizer = () => {
   const { width } = view;
 
   useEffect(() => {
-    const html = document.getElementsByTagName('html');
     const nav = document.getElementById('submissio');
-
     nav.style = `width: ${width}px`;
-    html[0].setAttribute('style', `margin-left: ${width}px`);
   }, [width]);
 
   const setWidth = width => {
