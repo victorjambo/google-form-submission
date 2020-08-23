@@ -1,7 +1,8 @@
-@import './vars.scss';
-@import './submissio.scss';
-@import './form.scss';
-@import './grid.scss';
+@import 'vars.scss',
+				'submissio.scss',
+				'form.scss',
+				'grid.scss',
+				'color-palette.scss';
 
 .App {
   text-align: center;
