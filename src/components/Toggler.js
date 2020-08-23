@@ -1,4 +1,6 @@
 import React, { useContext } from 'react';
+import * as Icon from 'react-feather';
+
 import { ViewContext } from '../context/Views';
 import { changeDomWidth } from '../utils/dom';
 
@@ -11,6 +13,9 @@ const Toggler = () => {
 
   return (
     <div className="submissio-toggle" onClick={handleClick} role="button" onKeyPress={() => {}} tabIndex={0}>
+      <div className="submissio-toggle-icon">
+        <Icon.ChevronRight size={15} color="#0f2e47" />
+      </div>
       <span>Submit</span>
 
       <div className="popup">

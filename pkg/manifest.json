@@ -20,7 +20,7 @@
       "matches": [
         "http://192.168.100.197:5000/*",
         "https://mutai.dev/*",
-        "https://stackoverflow.com/*"
+        "https://www.glassdoor.com/*"
       ],
       "js": ["content.js"]
     }
