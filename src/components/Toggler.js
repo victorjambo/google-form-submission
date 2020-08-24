@@ -1,14 +1,24 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import * as Icon from 'react-feather';
 
 import { ViewContext } from '../context/Views';
 import { changeDomWidth } from '../utils/dom';
 
 const Toggler = () => {
-  const [view] = useContext(ViewContext);
+  const [view, setView] = useContext(ViewContext);
+
+  useEffect(() => {
+    if (view.pinned) {
+      changeDomWidth(view.width);
+    }
+  }, []);
 
   const handleClick = () => {
     changeDomWidth(view.width);
+    setView(prevState => ({
+      ...prevState,
+      pinned: true
+    }));
   };
 
   return (

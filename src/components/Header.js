@@ -49,6 +49,10 @@ const Header = () => {
 
   const handlePin = () => {
     changeDomWidth(0);
+    setView(prevState => ({
+      ...prevState,
+      pinned: false
+    }));
   };
 
   return (

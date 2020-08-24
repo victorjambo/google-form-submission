@@ -7,7 +7,7 @@ export const ViewContext = createContext();
 export const ViewProvider = props => {
   const [view, setView] = useState({
     page: VIEWS.HOME,
-    pinned: false,
+    pinned: true,
     width: DEFAULTS.WIDTH
   });
 
