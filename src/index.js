@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 import styles from './styles/styles.lazy.scss';
+import bootstrap from './styles/bootstrap.min.css';
 
 const createFindNode = () => {
   const { body } = document;
@@ -19,6 +20,7 @@ const createFindNode = () => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  bootstrap.use();
   styles.use();
   const wrapper = createFindNode();
   wrapper ? ReactDOM.render(<App />, wrapper) : false;
