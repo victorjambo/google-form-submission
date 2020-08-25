@@ -2,7 +2,10 @@ import React from 'react';
 
 const Footer = () => (
   <div className="submissio-footer">
-    <a href="/" className="login-action">Login to unlock more features</a>
+    <div className="submissio-btn-grp">
+      <input className="btn submissio-btn-cancel" type="button" value="Reset" />
+      <input className="btn submissio-btn-submit" type="submit" value="Submit" />
+    </div>
   </div>
 );
 

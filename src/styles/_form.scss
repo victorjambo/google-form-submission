@@ -57,40 +57,50 @@
 		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
 		border-radius: 15px 15px 15px 0px;
 	}
+}
 
-	.submissio-btn-grp {
-		text-align: end;
-		border-top: 1px solid $gray-200;
+.submissio-btn-grp {
+	text-align: end;
+	border-top: 1px solid $gray-200;
 
-		.submissio-btn-cancel,
-		.submissio-btn-submit {
-			font-size: 1rem;
-			padding: 0.65rem 1rem;
-			color: #fff;
-			background: $primary;
-			border-radius: 0.42rem;
-			text-align: center;
-			font-style: normal;
-			border: 1px solid transparent;
-			margin: 10px;
-		}
+	.submissio-btn-cancel,
+	.submissio-btn-submit {
+		font-size: 1rem;
+		padding: 0.65rem 1rem;
+		color: #fff;
+		background: $primary;
+		border-radius: 0.42rem;
+		text-align: center;
+		font-style: normal;
+		border: 1px solid transparent;
+		margin: 10px;
+	}
 
-		.submissio-btn-cancel {
-			color: $primary;
-			background-color: $success-light;
-			border-color: transparent;
-		}
+	.submissio-btn-cancel {
+		color: $primary;
+		background-color: $success-light;
+		border-color: transparent;
+	}
 
-		.submissio-btn-cancel:hover {
-			color: $white;
-			background-color: $primary;
-			border-color: transparent;
-		}
+	.submissio-btn-cancel:hover {
+		color: $white;
+		background-color: $primary;
+		border-color: transparent;
+	}
 
-		.submissio-btn-submit:hover {
-			color: $dark-less;
-			background-color: $success-hover;
-			border-color: $success-hover;
-		}
+	.submissio-btn-submit:hover {
+		color: $dark-less;
+		background-color: $success-hover;
+		border-color: $success-hover;
+	}
+}
+
+.btn-primary {
+	background-color: $success-hover!important;
+	border-color: $success-hover!important;
+
+	&.active {
+		background-color: $primary!important;
+		border-color: $primary!important;
 	}
 }
