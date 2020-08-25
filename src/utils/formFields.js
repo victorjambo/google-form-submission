@@ -1,7 +1,6 @@
 export const FIELD_TYPES = {
   DROPDOWN: 'DROPDOWN',
-  RADIO: 'RADIO',
-  CHECKBOX: 'CHECKBOX',
+  GROUP: 'GROUP',
   TEXT: 'TEXT',
   URL: 'URL',
 };
@@ -24,13 +23,14 @@ export const FIELDS = {
     displayName: 'IC Number',
     category: '',
     parent: 'IC Number',
+    placeholder: 'IC Number',
   },
   project: {
     name: 'entry.1129632657',
     type: FIELD_TYPES.DROPDOWN,
     required: true,
-    options: ['High Priority', 'ActiveJobsCheck', 'Jira Ticket', 'Unhealthy Project', 'User feedback (Side Projects)'],
-    displayName: 'Sub- Project',
+    options: ['High Priority', 'ActiveJobsCheck', 'Jira Ticket', 'Unhealthy Project', 'User feedback'],
+    displayName: 'Project',
     category: '',
     parent: '',
   },
@@ -47,10 +47,12 @@ export const FIELDS = {
     name: 'entry.1513688965',
     type: FIELD_TYPES.URL,
     required: true,
-    options: [''],
-    displayName: 'Enter integrations queue Url/Main Url on IC',
+    options: [],
+    displayName: 'Integrations queue Url',
     category: 'UNHEALTHY',
     parent: 'Pre-Crawl',
+    unhealthy: 'Main Url on IC',
+    placeholder: 'url'
   },
   crawlType: {
     name: 'entry.1448858690',
@@ -69,10 +71,11 @@ export const FIELDS = {
     displayName: 'Give a brief Comment if it is Cannot-Crawl',
     category: 'CANNOT CRAWL',
     parent: 'Pre-Crawl',
+    placeholder: 'comment',
   },
   checkemployerexist: {
     name: 'entry.927175183',
-    type: FIELD_TYPES.DROPDOWN,
+    type: FIELD_TYPES.GROUP,
     required: true,
     options: ['Yes', 'No', 'N/A'],
     displayName: 'Checked if employer exist on Glassdoor?',
@@ -81,7 +84,7 @@ export const FIELDS = {
   },
   checkmoreemployers: {
     name: 'entry.1426142585',
-    type: FIELD_TYPES.DROPDOWN,
+    type: FIELD_TYPES.GROUP,
     required: true,
     options: ['Yes', 'No', 'N/A'],
     displayName: 'Checked to see if there\'s more than one employer involved?',
@@ -90,7 +93,7 @@ export const FIELDS = {
   },
   checkexistingic: {
     name: 'entry.981306830',
-    type: FIELD_TYPES.DROPDOWN,
+    type: FIELD_TYPES.GROUP,
     required: true,
     options: ['Yes', 'No', 'N/A'],
     displayName: 'Check if there is an existing IC?',
@@ -99,16 +102,16 @@ export const FIELDS = {
   },
   xpaths: {
     name: 'entry.2127786391',
-    type: FIELD_TYPES.DROPDOWN,
+    type: FIELD_TYPES.GROUP,
     required: false,
     options: ['Yes', 'No', 'N/A'],
-    displayName: 'Included the four basic Xpaths? i.e LOCATION, TITLE, JOBLISTINGURL and DESCRIPTION?',
+    displayName: 'Included 4 basic Xpaths?',
     category: '',
     parent: 'Custom Crawl Rules',
   },
   pprs: {
     name: 'entry.1695002413',
-    type: FIELD_TYPES.RADIO,
+    type: FIELD_TYPES.GROUP,
     required: false,
     options: ['Yes', 'No', 'N/A'],
     displayName: 'Included all necessary PPRs?',
@@ -117,7 +120,7 @@ export const FIELDS = {
   },
   jobCount: {
     name: 'entry.1302079706',
-    type: FIELD_TYPES.DROPDOWN,
+    type: FIELD_TYPES.GROUP,
     required: false,
     options: ['Yes', 'No', 'N/A'],
     displayName: 'Filled the Expected Job Count?',
@@ -126,7 +129,7 @@ export const FIELDS = {
   },
   IDFromSource: {
     name: 'entry.1663521334',
-    type: FIELD_TYPES.DROPDOWN,
+    type: FIELD_TYPES.GROUP,
     required: false,
     options: ['Yes', 'No', 'N/A'],
     displayName: 'Captured IDFromSource and jobListingEmail?',
@@ -135,7 +138,7 @@ export const FIELDS = {
   },
   unhealthyicstatus: {
     name: 'entry.950348769',
-    type: FIELD_TYPES.DROPDOWN,
+    type: FIELD_TYPES.GROUP,
     required: false,
     options: ['Done', 'Pending', 'N/A'],
     displayName: 'What is the final status of the IC?',
@@ -144,7 +147,7 @@ export const FIELDS = {
   },
   icstatus: {
     name: 'entry.652043842',
-    type: FIELD_TYPES.DROPDOWN,
+    type: FIELD_TYPES.GROUP,
     required: false,
     options: ['Enabled', 'Disabled'],
     displayName: 'What is the final Status of the IC?',
@@ -153,7 +156,7 @@ export const FIELDS = {
   },
   existingic: {
     name: 'entry.1008621477',
-    type: FIELD_TYPES.DROPDOWN,
+    type: FIELD_TYPES.GROUP,
     required: false,
     options: ['Yes', 'No'],
     displayName: 'Existing IC',

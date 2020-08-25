@@ -78,7 +78,7 @@
     box-sizing: border-box;
     @include theme-aware('background', 'color-background');
     overflow: scroll;
-    padding: 20px 2px;
+    padding-bottom: 5rem;
   }
 
   .submissio-footer {
