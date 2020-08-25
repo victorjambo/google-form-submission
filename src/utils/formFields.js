@@ -105,7 +105,7 @@ export const FIELDS = {
     type: FIELD_TYPES.GROUP,
     required: false,
     options: ['Yes', 'No', 'N/A'],
-    displayName: 'Included 4 basic Xpaths?',
+    displayName: 'Included 4 basic Xpaths',
     category: '',
     parent: 'Custom Crawl Rules',
   },
@@ -123,7 +123,7 @@ export const FIELDS = {
     type: FIELD_TYPES.GROUP,
     required: false,
     options: ['Yes', 'No', 'N/A'],
-    displayName: 'Filled the Expected Job Count?',
+    displayName: 'Filled the Expected Job Count',
     category: '',
     parent: 'Custom Crawl Rules',
   },
@@ -163,4 +163,12 @@ export const FIELDS = {
     category: '',
     parent: '',
   },
+};
+
+export const CRAWL_TYPE = {
+  TK: 'TARAKAN',
+  JC: 'JCRAWLER',
+  XF: 'XML FEED',
+  MF: 'MASTER FEED',
+  CC: 'CANNOT-CRAWL'
 };
