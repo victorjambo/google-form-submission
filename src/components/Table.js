@@ -1,68 +1,22 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable max-len */
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 
 import Dropdown from './elements/Dropdown';
 import { FIELDS, CRAWL_TYPE } from '../utils/formFields';
 import BtnGroup from './elements/BtnGroup';
 import TableRow from './elements/TableRow';
+import { SubmitContext } from '../context/Submit';
 
-const fieldDefaults = {
-  owner: 'Owner',
-  project: 'High Priority',
-  ticketType: 'New Ticket',
-  url: '',
-  crawlType: 'TARAKAN',
-  comment: '',
-  checkemployerexist: 'Yes',
-  checkmoreemployers: 'Yes',
-  checkexistingic: 'Yes',
-  xpaths: 'Yes',
-  pprs: 'Yes',
-  jobCount: 'Yes',
-  IDFromSource: 'Yes',
-  unhealthyicstatus: 'Done',
-  icnumber: '0000',
-  icstatus: 'Enabled',
-  existingic: 'No',
-};
+const Table = props => {
+  const [customDisplayname] = useContext(SubmitContext);
 
-const customDisplayname = {
-  owner: FIELDS.owner.displayName,
-  project: FIELDS.project.displayName,
-  ticketType: FIELDS.ticketType.displayName,
-  crawlType: FIELDS.crawlType.displayName,
-  comment: 'Cannot-Crawl Comment',
-  checkemployerexist: 'Checked if employer exist',
-  checkmoreemployers: 'Checked for more employers',
-  checkexistingic: 'Checked if existing IC',
-  xpaths: FIELDS.xpaths.displayName,
-  pprs: 'Included necessary PPRs',
-  jobCount: FIELDS.jobCount.displayName,
-  IDFromSource: 'Captured ID/Email',
-  unhealthyicstatus: 'Unhealthy IC status',
-  icnumber: FIELDS.icnumber.displayName,
-  icstatus: FIELDS.icstatus.displayName,
-  existingic: FIELDS.existingic.displayName,
-};
-
-const Table = () => {
-  const [owner, setOwner] = useState(fieldDefaults.owner);
-  const [project, setproject] = useState(fieldDefaults.project);
-  const [ticketType, setticketType] = useState(fieldDefaults.ticketType);
-  const [url, seturl] = useState(fieldDefaults.url);
-  const [crawlType, setcrawlType] = useState(fieldDefaults.crawlType);
-  const [comment, setcomment] = useState(fieldDefaults.comment);
-  const [checkemployerexist, setcheckemployerexist] = useState(fieldDefaults.checkemployerexist);
-  const [checkmoreemployers, setcheckmoreemployers] = useState(fieldDefaults.checkmoreemployers);
-  const [checkexistingic, setcheckexistingic] = useState(fieldDefaults.checkexistingic);
-  const [xpaths, setxpaths] = useState(fieldDefaults.xpaths);
-  const [pprs, setpprs] = useState(fieldDefaults.pprs);
-  const [jobCount, setjobCount] = useState(fieldDefaults.jobCount);
-  const [IDFromSource, setIDFromSource] = useState(fieldDefaults.IDFromSource);
-  const [unhealthyicstatus, setunhealthyicstatus] = useState(fieldDefaults.unhealthyicstatus);
-  const [icnumber, seticnumber] = useState(fieldDefaults.icnumber);
-  const [icstatus, seticstatus] = useState(fieldDefaults.icstatus);
-  const [existingic, setexistingic] = useState(fieldDefaults.existingic);
+  const { owner,
+    project, ticketType, url, crawlType, comment, checkemployerexist, checkmoreemployers, checkexistingic,
+    xpaths, pprs, jobCount, IDFromSource, unhealthyicstatus, icnumber, icstatus, existingic, setOwner,
+    setproject, setticketType, seturl, setcrawlType, setcomment, setcheckemployerexist, setcheckmoreemployers,
+    setcheckexistingic, setxpaths, setpprs, setjobCount, setIDFromSource, setunhealthyicstatus, seticnumber,
+    seticstatus, setexistingic } = props;
 
   return (
     <table className="table table-hover">

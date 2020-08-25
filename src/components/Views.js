@@ -4,6 +4,7 @@ import React, { useContext } from 'react';
 import { VIEWS } from '../utils/constants';
 import { ViewContext } from '../context/Views';
 import Home from './Home';
+import { SubmitProvider } from '../context/Submit';
 
 const DefaultView = () => <div className="default-danger">Something Went Wrong!!!</div>;
 
@@ -23,9 +24,11 @@ const ViewSwitcher = () => {
 };
 
 const Views = () => (
-  <div className="submissio-views">
-    <ViewSwitcher currentView={VIEWS.HOME} />
-  </div>
+  <SubmitProvider>
+    <div className="submissio-views">
+      <ViewSwitcher currentView={VIEWS.HOME} />
+    </div>
+  </SubmitProvider>
 );
 
 export default Views;
