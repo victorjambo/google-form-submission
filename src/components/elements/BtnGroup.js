@@ -16,7 +16,7 @@ const BtnGroup = ({ defaultItem, menuItems, setState }) => {
           <button
             key={item}
             type="button"
-            className={`btn btn-primary ${selected === item && 'active'}`}
+            className={`btn btn-primary btn-sm ${selected === item && 'active'}`}
             onClick={() => handleSelection(item)}
           >
             {item}

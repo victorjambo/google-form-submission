@@ -24,7 +24,7 @@ const Dropdown = ({ defaultItem, menuItems, setState }) => {
 
   return (
     <div className="dropdown" ref={dropdownRef}>
-      <button className="btn btn-success btn-sm dropdown-toggle" type="button" onClick={toggle}>
+      <button className="btn btn-primary btn-sm dropdown-toggle" type="button" onClick={toggle}>
         {selected}
       </button>
       <div className="dropdown-menu" ref={dropdownMenuRef}>
