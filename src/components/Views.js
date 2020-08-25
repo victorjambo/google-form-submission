@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import React, { useContext } from 'react';
 
-import Form from './Form';
 import { VIEWS } from '../utils/constants';
 import { ViewContext } from '../context/Views';
+import Home from './Home';
 
 const DefaultView = () => <div className="default-danger">Something Went Wrong!!!</div>;
 
@@ -14,7 +14,7 @@ const ViewSwitcher = () => {
 
   switch (view.page) {
     case VIEWS.HOME:
-      return <Form />;
+      return <Home />;
     case VIEWS.SETTINGS:
       return <SettingsView />;
     default:
