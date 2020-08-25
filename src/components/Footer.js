@@ -1,9 +1,12 @@
 import React, { useContext } from 'react';
 import { SubmitContext } from '../context/Submit';
 
-const Footer = ({ formFields }) => {
+const Footer = () => {
+  const [,,,,, dispatch] = useContext(SubmitContext);
+
   const handleReset = e => {
     e.preventDefault();
+    dispatch({ type: 'reset' });
   };
 
   return (

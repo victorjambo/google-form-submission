@@ -1,5 +1,6 @@
-/* eslint-disable react/prop-types */
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useReducer } from 'react';
+import PropTypes from 'prop-types';
+
 import { FIELDS } from '../utils/formFields';
 
 const FIELD_DEFAULTS = {
@@ -41,11 +42,23 @@ const CUSTOM_DISPLAYNAME = {
   existingic: FIELDS.existingic.displayName,
 };
 
+const reducer = (state, action) => {
+  if (action.type === 'reset') {
+    return FIELD_DEFAULTS;
+  }
+
+  const result = { ...state };
+  result[action.type] = action.value;
+  return result;
+};
+
 export const SubmitContext = createContext();
 
 export const SubmitProvider = props => {
   const [fieldDefaults, setFieldDefaults] = useState(FIELD_DEFAULTS);
   const [customDisplayname, setCustomDisplayname] = useState(CUSTOM_DISPLAYNAME);
+
+  const [state, dispatch] = useReducer(reducer, FIELD_DEFAULTS);
 
   const { children } = props;
 
@@ -54,10 +67,15 @@ export const SubmitProvider = props => {
       fieldDefaults,
       setFieldDefaults,
       customDisplayname,
-      setCustomDisplayname
+      setCustomDisplayname,
+      state, dispatch
     ]}
     >
       {children}
     </SubmitContext.Provider>
   );
+};
+
+SubmitProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };
