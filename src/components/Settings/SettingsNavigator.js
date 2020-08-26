@@ -8,7 +8,7 @@ export const VIEW_NAMES = {
   DEFAULT_VALUES: 'DEFAULT_VALUES',
 };
 
-const ViewSwitcher = ({ setView }) => {
+const SettingsNavigator = ({ setView }) => {
   const handleClick = view => {
     setView(view);
   };
@@ -30,8 +30,8 @@ const ViewSwitcher = ({ setView }) => {
   );
 };
 
-ViewSwitcher.propTypes = {
+SettingsNavigator.propTypes = {
   setView: PropTypes.func.isRequired,
 };
 
-export default ViewSwitcher;
+export default SettingsNavigator;
