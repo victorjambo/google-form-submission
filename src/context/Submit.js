@@ -55,8 +55,8 @@ const reducer = (state, action) => {
 export const SubmitContext = createContext();
 
 export const SubmitProvider = props => {
-  const [fieldDefaults, setFieldDefaults] = useState(FIELD_DEFAULTS);
-  const [customDisplayname, setCustomDisplayname] = useState(CUSTOM_DISPLAYNAME);
+  const [fieldDefaults, setFieldDefaults] = useReducer(reducer, FIELD_DEFAULTS);
+  const [customDisplayname, setCustomDisplayname] = useReducer(reducer, CUSTOM_DISPLAYNAME);
 
   const [state, dispatch] = useReducer(reducer, FIELD_DEFAULTS);
 
