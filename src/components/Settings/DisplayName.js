@@ -19,6 +19,7 @@ const DisplayName = ({ name }) => {
       <>
         <input type="text" className="form-control" placeholder={customDisplayname[name]} onChange={e => setValue(e.target.value)} value={value} />
         <Icons.Save color="#1BC5BD" onClick={() => onSave({ type: name, value })} />
+        <Icons.X color="#F64E60" onClick={() => setEdit(false)} />
       </>
     );
   }
@@ -38,7 +39,7 @@ const DisplayNameContainer = () => {
       <h3>Change Display Name</h3>
       <ul className="list-group">
         {Object.keys(customDisplayname).map(name => (
-          <li key={name} role="presentation" onKeyPress={() => {}} className="list-group-item d-flex justify-content-between align-items-center">
+          <li key={name} className="list-group-item d-flex justify-content-between align-items-center">
             <DisplayName name={name} />
           </li>
         ))}
