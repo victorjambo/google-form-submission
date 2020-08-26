@@ -5,10 +5,8 @@ import { VIEWS } from '../utils/constants';
 import { ViewContext } from '../context/Views';
 import Home from './Home';
 import { SubmitProvider } from '../context/Submit';
-
-const DefaultView = () => <div className="default-danger">Something Went Wrong!!!</div>;
-
-const SettingsView = () => <div className="default-warning">{VIEWS.SETTINGS}</div>;
+import Settings from './Settings';
+import DefaultView from './DefaultView';
 
 const ViewSwitcher = () => {
   const [view] = useContext(ViewContext);
@@ -17,9 +15,9 @@ const ViewSwitcher = () => {
     case VIEWS.HOME:
       return <Home />;
     case VIEWS.SETTINGS:
-      return <SettingsView />;
+      return <Settings />;
     default:
-      return <DefaultView />; // TODO Add submit error btn to send selectedView
+      return <DefaultView />;
   }
 };
 
