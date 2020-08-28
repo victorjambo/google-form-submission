@@ -1,24 +1,17 @@
 export const STORE = {
-  HOVEROPEN: 'submissio.hover_open',
+  VIEW: 'submissio.view',
   THEME: 'submissio.theme',
-  POPUP: 'submissio.popup_shown',
-  WIDTH: 'submissio.sidebar_width',
-  SHOWN: 'submissio.sidebar_shown',
-  PINNED: 'submissio.sidebar_pinned',
   FIELD_DEFAULTS: 'submissio.field_defaults',
-  CUSTOM_DISPLAYNAME: 'submissio.custom_displayname'
-};
-
-export const DEFAULTS = {
-  HOVEROPEN: true,
-  HOTKEYS: '⌘+⇧+s, ⌃+⇧+s',
-  POPUP: false,
-  WIDTH: 332,
-  SHOWN: false,
-  PINNED: false,
+  CUSTOM_DISPLAYNAME: 'submissio.custom_displayname',
 };
 
 export const VIEWS = {
   HOME: 'HOME',
   SETTINGS: 'SETTINGS'
+};
+
+export const VIEW_DEFAULTS = {
+  page: VIEWS.HOME,
+  pinned: true,
+  width: 332,
 };
