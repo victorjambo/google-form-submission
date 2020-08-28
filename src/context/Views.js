@@ -1,19 +1,14 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { STORE, VIEW_DEFAULTS } from '../utils/constants';
-import { getLocalStorage, setLocalStorage } from '../utils/storage.api';
+import { VIEW_DEFAULTS } from '../utils/constants';
 
 export const ViewContext = createContext();
 
 export const ViewProvider = props => {
-  const [view, setView] = useState(() => getLocalStorage(STORE.VIEW, VIEW_DEFAULTS));
+  const [view, setView] = useState(VIEW_DEFAULTS);
 
   const { children } = props;
-
-  useEffect(() => {
-    setLocalStorage(STORE.VIEW, view);
-  }, [view]);
 
   return (
     <ViewContext.Provider value={[view, setView]}>
