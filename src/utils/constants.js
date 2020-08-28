@@ -1,6 +1,7 @@
 export const STORE = {
   VIEW: 'submissio.view',
   PINNED: 'submissio.view_pinned',
+  WIDTH: 'submissio.view_width',
   THEME: 'submissio.theme',
   FIELD_DEFAULTS: 'submissio.field_defaults',
   CUSTOM_DISPLAYNAME: 'submissio.custom_displayname',

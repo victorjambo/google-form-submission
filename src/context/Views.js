@@ -8,7 +8,8 @@ export const ViewContext = createContext();
 
 export const ViewProvider = props => {
   const [page, setPage] = useState(VIEW_DEFAULTS.page);
-  const [width, setWidth] = useState(VIEW_DEFAULTS.width);
+
+  const [width, setWidth] = useState(() => getLocalStorage(STORE.WIDTH, VIEW_DEFAULTS.width));
 
   const [pinned, setPinned] = useState(() => getLocalStorage(STORE.PINNED, VIEW_DEFAULTS.pinned));
 
@@ -16,7 +17,8 @@ export const ViewProvider = props => {
 
   useEffect(() => {
     setLocalStorage(STORE.PINNED, pinned);
-  }, [pinned]);
+    setLocalStorage(STORE.WIDTH, width);
+  }, [pinned, width]);
 
   return (
     <ViewContext.Provider value={
