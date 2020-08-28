@@ -6,26 +6,12 @@ import { ViewContext } from '../context/Views';
 import { VIEWS } from '../utils/constants';
 import { changeDomWidth } from '../utils/dom';
 
-const dark = 'submissio-dark';
-const light = 'submissio-light';
-
 const Header = () => {
   const [theme, setTheme] = useContext(ThemeContext);
   const [view, setView] = useContext(ViewContext);
 
   const handleThemeChange = () => {
-    const { body } = document;
-
-    setTheme(prevState => {
-      if (prevState === themes.dark) {
-        body.classList.add(light);
-        body.classList.remove(dark);
-        return themes.light;
-      }
-      body.classList.add(dark);
-      body.classList.remove(light);
-      return themes.dark;
-    });
+    setTheme(prevState => (prevState === themes.dark ? themes.light : themes.dark));
   };
 
   const handleSettings = () => {

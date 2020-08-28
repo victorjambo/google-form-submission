@@ -9,19 +9,19 @@ import { ThemeProvider } from './context/Theme';
 import { ViewProvider } from './context/Views';
 
 const App = () => (
-  <ThemeProvider>
-    <ViewProvider>
-      <Toggler />
+  <ViewProvider>
+    <Toggler />
 
+    <ThemeProvider>
       <Header />
+    </ThemeProvider>
 
-      <Announcement />
+    <Announcement />
 
-      <Views />
+    <Views />
 
-      <Resizer />
-    </ViewProvider>
-  </ThemeProvider>
+    <Resizer />
+  </ViewProvider>
 );
 
 export default App;

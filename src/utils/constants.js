@@ -1,6 +1,6 @@
 export const STORE = {
   HOVEROPEN: 'submissio.hover_open',
-  HOTKEYS: 'submissio.hotkeys',
+  THEME: 'submissio.theme',
   POPUP: 'submissio.popup_shown',
   WIDTH: 'submissio.sidebar_width',
   SHOWN: 'submissio.sidebar_shown',
