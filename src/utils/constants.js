@@ -15,3 +15,9 @@ export const VIEW_DEFAULTS = {
   pinned: true,
   width: 332,
 };
+
+export const VIEW_NAMES = {
+  HOME: 'HOME',
+  DISPLAY_NAME: 'DISPLAY_NAME',
+  DEFAULT_VALUES: 'DEFAULT_VALUES',
+};

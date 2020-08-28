@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import DefaultView from '../DefaultView';
 import DisplayNameContainer from './DisplayName';
 import DefaultValuesContainer from './DefaultValues';
-import SettingsNavigator, { VIEW_NAMES } from './SettingsNavigator';
+import SettingsNavigator from './SettingsNavigator';
+import { VIEW_NAMES } from '../../utils/constants';
 
 const Settings = () => {
   const [view, setView] = useState(VIEW_NAMES.HOME);
