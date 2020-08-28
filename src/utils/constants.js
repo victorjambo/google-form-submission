@@ -5,6 +5,8 @@ export const STORE = {
   WIDTH: 'submissio.sidebar_width',
   SHOWN: 'submissio.sidebar_shown',
   PINNED: 'submissio.sidebar_pinned',
+  FIELD_DEFAULTS: 'submissio.field_defaults',
+  CUSTOM_DISPLAYNAME: 'submissio.custom_displayname'
 };
 
 export const DEFAULTS = {
