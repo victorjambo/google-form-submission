@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable react/prop-types */
 import React, { Component, useContext } from 'react';
+import PropTypes from 'prop-types';
+
 import { ViewContext } from '../context/Views';
 
 class ResizerComponent extends Component {
@@ -81,6 +82,11 @@ class ResizerComponent extends Component {
     );
   }
 }
+
+ResizerComponent.propTypes = {
+  width: PropTypes.number.isRequired,
+  setWidth: PropTypes.func.isRequired,
+};
 
 const Resizer = () => {
   const [view, setView] = useContext(ViewContext);

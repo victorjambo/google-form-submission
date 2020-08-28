@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React, { useContext, useState } from 'react';
 import * as Icons from 'react-feather';
 import PropTypes from 'prop-types';
@@ -13,9 +12,21 @@ const Switcher = ({ name, setValue }) => {
 
   switch (FIELDS[name].type) {
     case FIELD_TYPES.DROPDOWN:
-      return <Dropdown defaultItem={fieldDefaults[name]} menuItems={FIELDS[name].options} setState={value => setValue(value)} />;
+      return (
+        <Dropdown
+          defaultItem={fieldDefaults[name]}
+          menuItems={FIELDS[name].options}
+          setState={value => setValue(value)}
+        />
+      );
     case FIELD_TYPES.GROUP:
-      return <BtnGroup defaultItem={fieldDefaults[name]} menuItems={FIELDS[name].options} setState={value => setValue(value)} />;
+      return (
+        <BtnGroup
+          defaultItem={fieldDefaults[name]}
+          menuItems={FIELDS[name].options}
+          setState={value => setValue(value)}
+        />
+      );
     default:
       return <input />;
   }
