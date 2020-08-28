@@ -1,5 +1,9 @@
+const isDev = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
+
 const request = payload => {
-  const url = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSf-gI7stXjAPh7diDJKI8pSJE5GQQhSujCdg7bbDgGC9rT0fg/formResponse';
+  const prodUrl = 'https://docs.google.com/forms/u/1/d/e/1FAIpQLSeX9qqQjQYPiksfXUGbXupZHHOwAZW4SUxdmAWnxit2xwlxaw/formResponse';
+  const devUrl = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSdIHD9S64Ja6UpSYwV56XAI3zyHU-RuXFpIT0eFe2QnTT921A/formResponse';
+  const url = isDev ? devUrl : prodUrl;
 
   const myHeaders = new Headers();
   myHeaders.append('Content-Type', 'application/x-www-form-urlencoded');

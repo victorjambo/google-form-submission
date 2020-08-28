@@ -1,3 +1,5 @@
+const isDev = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
+
 export const FIELD_TYPES = {
   DROPDOWN: 'DROPDOWN',
   GROUP: 'GROUP',
@@ -5,9 +7,51 @@ export const FIELD_TYPES = {
   URL: 'URL',
 };
 
+const PROD_FIELD_NAME = {
+  owner: 'entry.1232059513',
+  icnumber: 'entry.1277951088',
+  project: 'entry.1129632657',
+  ticketType: 'entry.87220949',
+  url: 'entry.1513688965',
+  crawlType: 'entry.1448858690',
+  comment: 'entry.564759693',
+  checkemployerexist: 'entry.927175183',
+  checkmoreemployers: 'entry.1426142585',
+  checkexistingic: 'entry.981306830',
+  xpaths: 'entry.2127786391',
+  pprs: 'entry.1695002413',
+  jobCount: 'entry.1302079706',
+  IDFromSource: 'entry.1663521334',
+  unhealthyicstatus: 'entry.950348769',
+  icstatus: 'entry.652043842',
+  existingic: 'entry.1008621477',
+};
+
+const TEST_FIELD_NAME = {
+  owner: 'entry.2126946222',
+  icnumber: 'entry.1279691867',
+  project: 'entry.477937154',
+  ticketType: 'entry.391509437',
+  url: 'entry.1927266266',
+  crawlType: 'entry.882406774',
+  comment: 'entry.352816605',
+  checkemployerexist: 'entry.1592194456',
+  checkmoreemployers: 'entry.1341399576',
+  checkexistingic: 'entry.236816872',
+  xpaths: 'entry.266899346',
+  pprs: 'entry.1908261760_sentinel',
+  jobCount: 'entry.318391150',
+  IDFromSource: 'entry.2086565986',
+  unhealthyicstatus: 'entry.1309056380',
+  icstatus: 'entry.1042958128',
+  existingic: 'entry.726595368',
+};
+
+export const FIELD_NAME = isDev ? TEST_FIELD_NAME : PROD_FIELD_NAME;
+
 export const FIELDS = {
   owner: {
-    name: 'entry.1232059513',
+    name: FIELD_NAME.owner,
     type: FIELD_TYPES.DROPDOWN,
     required: true,
     options: ['Osman Dawe', 'Norton Akenga', 'Irene kamene', 'Oliver Kiprono', 'Bernice Atieno', 'Ryan Omondi', 'Sarah Wangah', 'Rebeccah Ndungi', 'Thomas Oduol', 'Leonard Terer', 'Isaac Kenga', 'John kang\'ethe', 'Douglas Mwarumba', 'Morris Maluni', 'Ezra Kigen', 'Isaac Mutunga', 'Kevin Kemboi', 'Dennis Kibet', 'Andrew Kamau', 'Abraham Kemboi', 'Joseph Mwau', 'Wendy Viola', 'Grace Jemeli', 'Rose Makau', 'Jonathan Kombich', 'Elizabeth Onyango', 'Ruth Gichina', 'Kelvin Mwangi'],
@@ -16,7 +60,7 @@ export const FIELDS = {
     parent: '',
   },
   icnumber: {
-    name: 'entry.1277951088',
+    name: FIELD_NAME.icnumber,
     type: FIELD_TYPES.TEXT,
     required: true,
     options: [],
@@ -26,7 +70,7 @@ export const FIELDS = {
     placeholder: 'IC Number',
   },
   project: {
-    name: 'entry.1129632657',
+    name: FIELD_NAME.project,
     type: FIELD_TYPES.DROPDOWN,
     required: true,
     options: ['High Priority', 'ActiveJobsCheck', 'Jira Ticket', 'Unhealthy Project', 'User feedback'],
@@ -35,7 +79,7 @@ export const FIELDS = {
     parent: '',
   },
   ticketType: {
-    name: 'entry.87220949',
+    name: FIELD_NAME.ticketType,
     type: FIELD_TYPES.DROPDOWN,
     required: true,
     options: ['Mill Valley Ticket', 'New Ticket', 'N/A'],
@@ -44,7 +88,7 @@ export const FIELDS = {
     parent: '',
   },
   url: {
-    name: 'entry.1513688965',
+    name: FIELD_NAME.url,
     type: FIELD_TYPES.URL,
     required: true,
     options: [],
@@ -55,7 +99,7 @@ export const FIELDS = {
     placeholder: 'url'
   },
   crawlType: {
-    name: 'entry.1448858690',
+    name: FIELD_NAME.crawlType,
     type: FIELD_TYPES.DROPDOWN,
     required: true,
     options: ['TARAKAN', 'JCRAWLER', 'XML FEED', 'MASTER FEED', 'CANNOT-CRAWL'],
@@ -64,7 +108,7 @@ export const FIELDS = {
     parent: 'Pre-Crawl',
   },
   comment: {
-    name: 'entry.564759693',
+    name: FIELD_NAME.comment,
     type: FIELD_TYPES.TEXT,
     required: false,
     options: [],
@@ -74,7 +118,7 @@ export const FIELDS = {
     placeholder: 'comment',
   },
   checkemployerexist: {
-    name: 'entry.927175183',
+    name: FIELD_NAME.checkemployerexist,
     type: FIELD_TYPES.GROUP,
     required: true,
     options: ['Yes', 'No', 'N/A'],
@@ -83,7 +127,7 @@ export const FIELDS = {
     parent: 'Employer Check',
   },
   checkmoreemployers: {
-    name: 'entry.1426142585',
+    name: FIELD_NAME.checkmoreemployers,
     type: FIELD_TYPES.GROUP,
     required: true,
     options: ['Yes', 'No', 'N/A'],
@@ -92,7 +136,7 @@ export const FIELDS = {
     parent: 'Employer Check',
   },
   checkexistingic: {
-    name: 'entry.981306830',
+    name: FIELD_NAME.checkexistingic,
     type: FIELD_TYPES.GROUP,
     required: true,
     options: ['Yes', 'No', 'N/A'],
@@ -101,7 +145,7 @@ export const FIELDS = {
     parent: 'Employer Check',
   },
   xpaths: {
-    name: 'entry.2127786391',
+    name: FIELD_NAME.xpaths,
     type: FIELD_TYPES.GROUP,
     required: false,
     options: ['Yes', 'No', 'N/A'],
@@ -110,7 +154,7 @@ export const FIELDS = {
     parent: 'Custom Crawl Rules',
   },
   pprs: {
-    name: 'entry.1695002413',
+    name: FIELD_NAME.pprs,
     type: FIELD_TYPES.GROUP,
     required: false,
     options: ['Yes', 'No', 'N/A'],
@@ -119,7 +163,7 @@ export const FIELDS = {
     parent: 'Custom Crawl Rules',
   },
   jobCount: {
-    name: 'entry.1302079706',
+    name: FIELD_NAME.jobCount,
     type: FIELD_TYPES.GROUP,
     required: false,
     options: ['Yes', 'No', 'N/A'],
@@ -128,7 +172,7 @@ export const FIELDS = {
     parent: 'Custom Crawl Rules',
   },
   IDFromSource: {
-    name: 'entry.1663521334',
+    name: FIELD_NAME.IDFromSource,
     type: FIELD_TYPES.GROUP,
     required: false,
     options: ['Yes', 'No', 'N/A'],
@@ -137,7 +181,7 @@ export const FIELDS = {
     parent: 'Custom Crawl Rules',
   },
   unhealthyicstatus: {
-    name: 'entry.950348769',
+    name: FIELD_NAME.unhealthyicstatus,
     type: FIELD_TYPES.GROUP,
     required: false,
     options: ['Done', 'Pending', 'N/A'],
@@ -146,7 +190,7 @@ export const FIELDS = {
     parent: '',
   },
   icstatus: {
-    name: 'entry.652043842',
+    name: FIELD_NAME.icstatus,
     type: FIELD_TYPES.GROUP,
     required: false,
     options: ['Enabled', 'Disabled'],
@@ -155,7 +199,7 @@ export const FIELDS = {
     parent: 'IC Number',
   },
   existingic: {
-    name: 'entry.1008621477',
+    name: FIELD_NAME.existingic,
     type: FIELD_TYPES.GROUP,
     required: false,
     options: ['Yes', 'No'],
@@ -177,7 +221,7 @@ export const FIELD_DEFAULTS = {
   owner: 'Owner',
   project: 'High Priority',
   ticketType: 'New Ticket',
-  url: '',
+  url: 'https://weworkremotely.com/categories/remote-programming-jobs', // TODO input onchange not working
   crawlType: 'TARAKAN',
   comment: '',
   checkemployerexist: 'Yes',
