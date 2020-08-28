@@ -89,14 +89,16 @@ ResizerComponent.propTypes = {
 };
 
 const Resizer = () => {
-  const [,, width, setWidth] = useContext(ViewContext);
+  const [,, width, setWidth, pinned] = useContext(ViewContext);
 
   useEffect(() => {
     const html = document.getElementsByTagName('html');
     const nav = document.getElementById('submissio');
 
-    nav.style = `width: ${width}px`;
-    html[0].setAttribute('style', `margin-left: ${width}px`);
+    if (pinned) {
+      nav.style = `width: ${width}px`;
+      html[0].setAttribute('style', `margin-left: ${width}px`);
+    }
   }, [width]);
 
   return (

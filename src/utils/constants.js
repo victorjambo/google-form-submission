@@ -12,7 +12,7 @@ export const VIEWS = {
 
 export const VIEW_DEFAULTS = {
   page: VIEWS.HOME,
-  pinned: true,
+  pinned: false,
   width: 332,
 };
 
