@@ -43,6 +43,10 @@ class ResizerComponent extends Component {
 
     document.removeEventListener('mousemove', this.onMouseMove);
     document.removeEventListener('mouseup', this.onMouseUp);
+
+    const { currentWidth } = this.state;
+    const { setStorageWidth } = this.props;
+    setStorageWidth(currentWidth);
   }
 
   onMouseMove(e) {
@@ -86,10 +90,11 @@ class ResizerComponent extends Component {
 ResizerComponent.propTypes = {
   width: PropTypes.number.isRequired,
   setWidth: PropTypes.func.isRequired,
+  setStorageWidth: PropTypes.func.isRequired,
 };
 
 const Resizer = () => {
-  const [,, width, setWidth, pinned] = useContext(ViewContext);
+  const [,, width, setWidth, pinned,,, setStorageWidth] = useContext(ViewContext);
 
   useEffect(() => {
     const html = document.getElementsByTagName('html');
@@ -102,7 +107,7 @@ const Resizer = () => {
   }, [width]);
 
   return (
-    <ResizerComponent width={width} setWidth={setWidth} />
+    <ResizerComponent width={width} setWidth={setWidth} setStorageWidth={setStorageWidth} />
   );
 };
 
