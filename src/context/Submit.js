@@ -4,20 +4,7 @@ import PropTypes from 'prop-types';
 import { FIELD_DEFAULTS, CUSTOM_DISPLAYNAME } from '../utils/formFields';
 import { getLocalStorage, setLocalStorage } from '../utils/storage.api';
 import { STORE } from '../utils/constants';
-
-const reducer = (state, action) => {
-  if (action.type === 'reset') {
-    return FIELD_DEFAULTS;
-  }
-
-  if (action.type === 'REINITIALISE') {
-    return action.fieldDefaults;
-  }
-
-  const result = { ...state };
-  result[action.type] = action.value;
-  return result;
-};
+import { reducer, REINITIALISE } from './reducer';
 
 export const SubmitContext = createContext();
 
@@ -34,7 +21,7 @@ export const SubmitProvider = props => {
 
   useEffect(() => {
     setLocalStorage(STORE.FIELD_DEFAULTS, fieldDefaults);
-    dispatch({ type: 'REINITIALISE', fieldDefaults });
+    dispatch({ type: REINITIALISE, fieldDefaults });
   }, [fieldDefaults]);
 
   const { children } = props;
