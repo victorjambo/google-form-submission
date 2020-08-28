@@ -8,9 +8,9 @@ import Settings from './Settings';
 import DefaultView from './DefaultView';
 
 const ViewSwitcher = () => {
-  const [view] = useContext(ViewContext);
+  const [page] = useContext(ViewContext);
 
-  switch (view.page) {
+  switch (page) {
     case VIEWS.HOME:
       return <Home />;
     case VIEWS.SETTINGS:
@@ -23,7 +23,7 @@ const ViewSwitcher = () => {
 const Views = () => (
   <SubmitProvider>
     <div className="submissio-views">
-      <ViewSwitcher currentView={VIEWS.HOME} />
+      <ViewSwitcher />
     </div>
   </SubmitProvider>
 );

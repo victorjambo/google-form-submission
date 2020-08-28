@@ -6,12 +6,17 @@ import { VIEW_DEFAULTS } from '../utils/constants';
 export const ViewContext = createContext();
 
 export const ViewProvider = props => {
-  const [view, setView] = useState(VIEW_DEFAULTS);
+  const [page, setPage] = useState(VIEW_DEFAULTS.page);
+  const [width, setWidth] = useState(VIEW_DEFAULTS.width);
+  const [pinned, setPinned] = useState(VIEW_DEFAULTS.pinned);
 
   const { children } = props;
 
   return (
-    <ViewContext.Provider value={[view, setView]}>
+    <ViewContext.Provider value={
+      [page, setPage, width, setWidth, pinned, setPinned]
+    }
+    >
       {children}
     </ViewContext.Provider>
   );

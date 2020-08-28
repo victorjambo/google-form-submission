@@ -89,8 +89,7 @@ ResizerComponent.propTypes = {
 };
 
 const Resizer = () => {
-  const [view, setView] = useContext(ViewContext);
-  const { width } = view;
+  const [,, width, setWidth] = useContext(ViewContext);
 
   useEffect(() => {
     const html = document.getElementsByTagName('html');
@@ -99,13 +98,6 @@ const Resizer = () => {
     nav.style = `width: ${width}px`;
     html[0].setAttribute('style', `margin-left: ${width}px`);
   }, [width]);
-
-  const setWidth = width => {
-    setView(prevState => ({
-      ...prevState,
-      width,
-    }));
-  };
 
   return (
     <ResizerComponent width={width} setWidth={setWidth} />

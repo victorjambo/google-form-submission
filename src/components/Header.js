@@ -8,25 +8,19 @@ import { changeDomWidth } from '../utils/dom';
 
 const Header = () => {
   const [theme, setTheme] = useContext(ThemeContext);
-  const [view, setView] = useContext(ViewContext);
+  const [page, setPage,,,, setPinned] = useContext(ViewContext);
 
   const handleThemeChange = () => {
     setTheme(prevState => (prevState === themes.dark ? themes.light : themes.dark));
   };
 
   const handleSettings = () => {
-    setView(prevState => {
-      switch (prevState.page) {
+    setPage(prevState => {
+      switch (prevState) {
         case VIEWS.HOME:
-          return {
-            ...prevState,
-            page: VIEWS.SETTINGS
-          };
+          return VIEWS.SETTINGS;
         case VIEWS.SETTINGS:
-          return {
-            ...prevState,
-            page: VIEWS.HOME
-          };
+          return VIEWS.HOME;
         default:
           return prevState;
       }
@@ -35,10 +29,7 @@ const Header = () => {
 
   const handlePin = () => {
     changeDomWidth(0);
-    setView(prevState => ({
-      ...prevState,
-      pinned: false
-    }));
+    setPinned(false);
   };
 
   return (
@@ -55,7 +46,7 @@ const Header = () => {
       <div className="submissio-header-icons">
         <div className="submissio-header-icon" onClick={handleSettings} role="button" onKeyPress={() => {}} tabIndex={0}>
           {
-            view.page === VIEWS.HOME ? <Icon.Settings size={15} /> : <Icon.Home size={15} />
+            page === VIEWS.HOME ? <Icon.Settings size={15} /> : <Icon.Home size={15} />
           }
         </div>
 

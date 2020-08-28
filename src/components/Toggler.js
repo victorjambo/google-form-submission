@@ -5,20 +5,17 @@ import { ViewContext } from '../context/Views';
 import { changeDomWidth } from '../utils/dom';
 
 const Toggler = () => {
-  const [view, setView] = useContext(ViewContext);
+  const [,, width,, pinned, setPinned] = useContext(ViewContext);
 
   useEffect(() => {
-    if (view.pinned) {
-      changeDomWidth(view.width);
+    if (pinned) {
+      changeDomWidth(width);
     }
   }, []);
 
   const handleClick = () => {
-    changeDomWidth(view.width);
-    setView(prevState => ({
-      ...prevState,
-      pinned: true
-    }));
+    changeDomWidth(width);
+    setPinned(true);
   };
 
   return (
