@@ -27,6 +27,26 @@ const PROD_FIELD_NAME = {
   existingic: 'entry.1008621477',
 };
 
+const ANDELA_FIELD_NAME = {
+  owner: 'entry.1467115308',
+  icnumber: 'entry.1187313656',
+  project: 'entry.388810229',
+  ticketType: 'entry.350713543',
+  url: 'entry.1421199997',
+  crawlType: 'entry.591803652',
+  comment: 'entry.204913237',
+  checkemployerexist: 'entry.19439838',
+  checkmoreemployers: 'entry.2068417071',
+  checkexistingic: 'entry.797652772',
+  xpaths: 'entry.1960422925',
+  pprs: 'entry.138379603_sentinel',
+  jobCount: 'entry.236413511',
+  IDFromSource: 'entry.743772740',
+  unhealthyicstatus: 'entry.1244078870',
+  icstatus: 'entry.524686776',
+  existingic: 'entry.14029004',
+};
+
 const TEST_FIELD_NAME = {
   owner: 'entry.2126946222',
   icnumber: 'entry.1279691867',
@@ -47,7 +67,7 @@ const TEST_FIELD_NAME = {
   existingic: 'entry.726595368',
 };
 
-export const FIELD_NAME = isDev ? TEST_FIELD_NAME : PROD_FIELD_NAME;
+export const FIELD_NAME = isDev ? TEST_FIELD_NAME : ANDELA_FIELD_NAME;
 
 export const FIELDS = {
   owner: {
